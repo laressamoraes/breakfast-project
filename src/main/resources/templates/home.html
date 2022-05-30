@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col-md-1" th:text="${objeto.nome}"></div>
 				<div class="col-md-3" th:text="${objeto.cpf}"></div>
-				<div class="col-md-1" th:text="${objeto.item}"></div>
+				<div class="col-md-1" th:text="${objeto.item.getNome()}"></div>
 			
 				<div class="col-md-4">
 					<a th:href="@{'/update/' + ${objeto.id}}">Editar</a>
