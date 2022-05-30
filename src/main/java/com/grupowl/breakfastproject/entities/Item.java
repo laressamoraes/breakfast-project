@@ -1,12 +1,17 @@
 package com.grupowl.breakfastproject.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_item")
@@ -17,6 +22,10 @@ public class Item {
 		private Long id;
 		
 		private String nome;
+		
+		@JsonIgnore
+		@OneToMany(mappedBy = "item")
+		private List<User> users = new ArrayList<>();
 		
 		public Item() {
 		
@@ -42,6 +51,10 @@ public class Item {
 
 		public void setNome(String nome) {
 			this.nome = nome;
+		}
+		
+		public List<User> getUsers() {
+			return users;
 		}
 		
 		@Override

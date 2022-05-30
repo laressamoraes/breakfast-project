@@ -25,11 +25,11 @@ public class TestConfig implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Item i1 = new Item(null, "Pão");
-		Item i2 = new Item(null, "Café");
+		Item i1 = new Item();
+		Item i2 = new Item();
 		
-		User u1 = new User(null, "Primeiro", "001-001-001-01");
-		User u2 = new User(null, "Segundo", "002-002-002-02");
+		User u1 = new User();
+		User u2 = new User();
 		
 		itemRepository.saveAll(Arrays.asList(i1, i2));
 		userRepository.saveAll(Arrays.asList(u1, u2));	
