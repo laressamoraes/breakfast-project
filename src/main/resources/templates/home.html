@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lista</title>
+
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<script src="js/scripts.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-5">
+				<h1>LISTA DE CAFÉ DA MANHÃ</h1>
+			</div>
+
+			<div class="col-md-1">
+				<a href="/new">
+					<img src="img/add.png" style="height: 40px; padding-top:10px;">
+				</a>
+			</div>
+			<div class="container" style="width: 100px; margin-right: 555px; margin-top:5px">
+				<a href="/"><button class="btn btn-danger">Sair</button></a>
+			</div>
+
+		</div>
+
+		<div class="row" style="font-weight: bold">
+			<div class="col-md-1">COLABORADOR</div>
+			<div class="col-md-3">CPF</div>
+			<div class="col-md-1">ITEM</div>
+		</div>
+
+		<div th:each="objeto : ${listUsers}">
+			<div class="row">
+				<div class="col-md-1" th:text="${objeto.nome}"></div>
+				<div class="col-md-3" th:text="${objeto.cpf}"></div>
+				<div class="col-md-1" th:text="${objeto.item}"></div>
+			
+				<div class="col-md-4">
+					<a th:href="@{'/update/' + ${objeto.id}}">Editar</a>
+					<a th:href="@{'/delete/' + ${objeto.id}}">Excluir</a>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

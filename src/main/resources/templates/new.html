@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Incluir</title>
+		
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<script src="js/scripts.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<script src="../js/bootstrap.min.js"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+					<h1>INCLUIR OPÇÃO</h1>
+				</div>
+			</div>
+
+			<form action="#" th:action="@{/save}" th:object="${user}" method="post">
+				
+				<div class="row">
+					<div class="col-md-1">CPF</div>
+					<div class="col-md-5"><input type="text" th:field="*{cpf}"></div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-1">Nome</div>
+					<div class="col-md-5"><input type="text" th:field="*{nome}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">Item</div>
+					<div class="col-md-5"><input type="text" th:field="*{item.nome}"></div>
+				</div>
+				
+				<div class="row">
+		   			<div class="col-md-1"><button class="btn btn-primary" style="margin-left: 520px; margin-bottom: 10px" type="submit">Salvar</button></div>
+			   </div> 
+				
+			</form>
+			
+		</div>
+		
+		<div class="container">
+			<a href="/home"><button class="btn btn-danger">Voltar</button></a>
+		</div>	
+
+	</body>
+
+</html>

@@ -1,0 +1,24 @@
+a{
+	width: 100%!important;
+	text-decoration: none;
+}
+
+body{
+	text-align: center !important;
+}
+
+#principal{
+	background-image: url(../img/deposito.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+#rodape{
+	width: 85%;
+    height: 70px;
+    margin-top: 27%;
+    margin-left: auto;
+    margin-right: auto;
+	border-radius: 7px;
+	background-color: rgba(192, 191, 191, 0.514);
+}
