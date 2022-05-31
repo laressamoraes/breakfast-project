@@ -35,6 +35,10 @@ public class ItemService {
 		return this.itemRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
+	public Item insert(Item item) {
+		return itemRepository.save(item);
+	}
+	
 	public Item update(Long nome, Item obj) {
 		Item entity = itemRepository.getOne(nome);
 		updateData(entity, obj);
