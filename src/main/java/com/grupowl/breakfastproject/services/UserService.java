@@ -94,7 +94,6 @@ public class UserService {
 	@RequestMapping(value = "/save")
 	public String callSave(@ModelAttribute("user") User user, @ModelAttribute("item") Item item) {
 		List<User> listAll = userRepository.findAll();
-		System.out.println(user.getItem());
 		for (User u: listAll) {
 			if(u.getItem() == user.getItem()) {
 				throw new ItemException();
