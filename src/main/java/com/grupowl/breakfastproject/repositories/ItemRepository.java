@@ -27,7 +27,7 @@ public interface ItemRepository extends JpaRepository <Item, Long> {
 
 	@Modifying
 	@Transactional
-	@Query(value = "UPDATE TB_ITEM SET FULL_NAME = ?2 WHERE ID = ?1", nativeQuery = true)
+	@Query(value = "UPDATE TB_ITEM SET NOME = ?2 WHERE ID = ?1", nativeQuery = true)
 	Item update(Long nome, Item obj);
 
 	@Modifying

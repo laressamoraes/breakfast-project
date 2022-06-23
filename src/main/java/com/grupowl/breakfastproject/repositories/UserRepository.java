@@ -25,7 +25,7 @@ public interface UserRepository extends JpaRepository <User, Long> {
 
 	@Modifying
 	@Transactional
-	@Query(value = "UPDATE TB_USER SET FULL_NAME = ?2, CPF = ?3 WHERE ID = ?1", nativeQuery = true)
+	@Query(value = "UPDATE TB_USER SET NOME = ?2, CPF = ?3 WHERE ID = ?1", nativeQuery = true)
 	User update(Long id, User obj);
 
 	@Modifying
